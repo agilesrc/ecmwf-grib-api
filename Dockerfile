@@ -2,9 +2,9 @@ FROM centos:7
 
 MAINTAINER "AgileSrc LLC" <support@agilesrc.com>
 
-ENV GRIB_API_VERSION 1.17.0
+ENV GRIB_API_VERSION 1.23.1
 
-#https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-1.14.7-Source.tar.gz?api=v2
+#example url https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-1.14.7-Source.tar.gz?api=v2
 RUN yum install -y openjpeg openjpeg-devel gcc-c++ gfortan wget make \
 	&& cd /tmp &&  wget https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-${GRIB_API_VERSION}-Source.tar.gz \
     && cd /tmp && tar xvzf grib_api-${GRIB_API_VERSION}-Source.tar.gz && rm -f grib_api-${GRIB_API_VERSION}-Source.tar.gz \
